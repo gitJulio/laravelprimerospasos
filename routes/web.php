@@ -13,7 +13,21 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {
-    return 'Hola';
-    //return view('welcome');
+Route::get('/',function(){
+    return view('welcome');
+});
+
+Route::get('/bienvenida', function () {
+
+    return view('welcome');
+});
+
+Route::get('/contacto',function(){
+    return 'contactame';
+})->name('contacto');
+
+Route::get('/custom',function(){
+
+    $mesj="Hola Custom";
+    return view('custom',['msj'=>$mesj, 'edad'=>30]);
 });
