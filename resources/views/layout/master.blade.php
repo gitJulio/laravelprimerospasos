@@ -7,10 +7,11 @@
     <title>Document</title>
 </head>
 <body>
-    <h1>Bienvenido</h1>
-    <a href="/contacto">Contacto</a>
-    <a href="{{Route('contacto')}}">Contacto con Name</a>
-    <hr />
-    {{$user->name}}
+
+    <h1>Dashboard</h1>
+
+    @yield('content')
+
+
 </body>
 </html>

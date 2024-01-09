@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\Dashboard\TestController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -12,22 +13,17 @@ use Illuminate\Support\Facades\Route;
 | be assigned to the "web" middleware group. Make something great!
 |
 */
-
+/*
 Route::get('/',function(){
     return view('welcome');
 });
+*/
 
-Route::get('/bienvenida', function () {
-
-    return view('welcome');
+Route::get('/',function(){
+    return 'Hola Mundo';
 });
 
-Route::get('/contacto',function(){
-    return 'contactame';
-})->name('contacto');
+Route::get('/prueba',[TestController::class,'index']);
 
-Route::get('/custom',function(){
 
-    $mesj="Hola Custom";
-    return view('custom',['msj'=>$mesj, 'edad'=>30]);
-});
+
