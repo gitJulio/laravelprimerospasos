@@ -13,12 +13,12 @@ return new class extends Migration
     {
         Schema::create('posts', function (Blueprint $table) {
             $table->id();
-            $table->string("title",250);
-            $table->string("slug",255);
-            $table->string("description",255);
+            $table->string("title",250)->nullable();
+            $table->string("slug",255)->nullable();
+            $table->string("description",255)->nullable();
             $table->text("content");
-            $table->string("image");
-            $table->enum("posted",['yes','not']);
+            $table->string("image")->nullable();
+            $table->enum("posted",['yes','not'])->default('not');
             $table->foreignId('category_id')->constrained()->onDelete('cascade');
             $table->timestamps();
         });
